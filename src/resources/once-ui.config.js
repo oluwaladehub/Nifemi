@@ -1,7 +1,6 @@
 import { home } from "./content";
 
-// IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
-const baseURL = "https://demo.magic-portfolio.com";
+const baseURL = "https://nifedev.netlify.app/";
 
 const routes = {
   "/": true,
@@ -57,24 +56,23 @@ const fonts = {
   code: code,
 };
 
-// default customization applied to the HTML in the main layout.tsx
 const style = {
-  theme: "system", // dark | light | system
-  neutral: "gray", // sand | gray | slate | custom
-  brand: "cyan", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  accent: "red", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  solid: "contrast", // color | contrast
-  solidStyle: "flat", // flat | plastic
-  border: "playful", // rounded | playful | conservative
-  surface: "translucent", // filled | translucent
-  transition: "all", // all | micro | macro
-  scaling: "100" // 90 | 95 | 100 | 105 | 110
+  theme: "system", 
+  neutral: "gray", 
+  brand: "cyan", 
+  accent: "red", 
+  solid: "contrast", 
+  solidStyle: "flat",
+  border: "playful", 
+  surface: "translucent",
+  transition: "all",
+  scaling: "100"
 };
 
 const dataStyle = {
-  variant: "gradient", // flat | gradient | outline
-  mode: "categorical", // categorical | divergent | sequential
-  height: 24, // default chart height
+  variant: "gradient", 
+  mode: "categorical", 
+  height: 24,
   axis: {
     stroke: "var(--neutral-alpha-weak)",
   },
@@ -181,9 +179,7 @@ const schema = {
 
 // social links
 const sameAs = {
-  threads: "https://www.threads.com/@once_ui",
-  linkedin: "https://www.linkedin.com/company/once-ui/",
-  discord: "https://discord.com/invite/5EyAQ4eNdS",
+  linkedin: "https://www.linkedin.com/in/oluwanifemi-oluwalade-775372296/",
 };
 
 export { display, mailchimp, routes, protectedRoutes, baseURL, fonts, style, schema, sameAs, effects, dataStyle };
