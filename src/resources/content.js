@@ -161,7 +161,7 @@ const about = {
       },
       {
         company: "EarlyFounders NG",
-        timeframe: "2024",
+        timeframe: "2024 - Present",
         role: "PROGRAMMING TUTOR",
         achievements: [
           <>
