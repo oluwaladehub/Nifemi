@@ -87,14 +87,7 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Industrial Chemistry graduate with a solid foundation in chemical processes, analytical techniques,
-        and laboratory practices. Possessing hands-on experience gained through academic projects and
-        internships, I have developed strong skills in chemical analysis, process optimization, and quality
-        control. My academic training has equipped me with a deep understanding of industrial chemical
-        processes, material science, and environmental regulations.
-        My technical expertise is complemented by a keen eye for detail and a creative approach to
-        problem-solving. I am committed to staying at the forefront of technological advancements and
-        continually enhancing my skills to create impactful, cutting-edge digital experiences.
+        As an Industrial Chemistry graduate, I possess a strong foundation in chemical processes, analytical techniques, and laboratory practices. This background has honed my problem-solving skills and attention to detail, which I now apply to crafting robust and engaging digital experiences. I am a passionate Mobile and Web Developer, turning complex ideas into intuitive user experiences. My technical expertise in industrial chemistry is complemented by a creative approach to software development, allowing me to build impactful, cutting-edge applications. I am committed to staying at the forefront of technological advancements and continually enhancing my skills in both my original field and the ever-evolving world of mobile and web development.
       </>
     ),
   },
@@ -182,7 +175,7 @@ const about = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
+    display: false, 
     title: "Studies",
     institutions: [
       {
@@ -216,19 +209,76 @@ const about = {
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Technical skills",
-    skills: [
+    webMobileSkills: [
       {
-        title: "Strong writing and communication Skill",
+        title: "Next.js",
         description: <></>,
         images: [],
       },
       {
-        title: "Creative and Innovation",
+        title: "Vite",
         description: <></>,
         images: [],
       },
+      {
+        title: "Vue.js",
+        description: <></>,
+        images: [],
+      },
+      {
+        title: "React",
+        description: <></>,
+        images: [],
+      },
+      {
+        title: "React Native",
+        description: <></>,
+        images: [],
+      },
+      {
+        title: "Kotlin",
+        description: <></>,
+        images: [],
+      },
+      {
+        title: "Node.js",
+        description: <></>,
+        images: [],
+      },
+      {
+        title: "Express.js",
+        description: <></>,
+        images: [],
+      },
+      {
+        title: "TypeScript",
+        description: <></>,
+        images: [],
+      },
+      {
+        title: "HTML",
+        description: <></>,
+        images: [],
+      },
+      {
+        title: "Tailwind CSS",
+        description: <></>,
+        images: [],
+      },
+      {
+        title: "CSS",
+        description: <></>,
+        images: [],
+      },
+      {
+        title: "JavaScript",
+        description: <></>,
+        images: [],
+      },
+    ],
+    softwareDevelopmentSkills: [
       {
         title: "Software Programming",
         description: <></>,
@@ -239,6 +289,8 @@ const about = {
         description: <></>,
         images: [],
       },
+    ],
+    industrialChemistrySkills: [
       {
         title: "Chemical Analysis",
         description: <></>,
@@ -246,6 +298,18 @@ const about = {
       },
       {
         title: "Quality Assurance",
+        description: <></>,
+        images: [],
+      },
+    ],
+    generalSkills: [
+      {
+        title: "Strong writing and communication Skill",
+        description: <></>,
+        images: [],
+      },
+      {
+        title: "Creative and Innovation",
         description: <></>,
         images: [],
       },

@@ -47,7 +47,12 @@ export default function About() {
     {
       title: about.technical.title,
       display: about.technical.display,
-      items: about.technical.skills.map((skill) => skill.title),
+      items: [
+        ...about.technical.webMobileSkills.map((skill: { title: string }) => skill.title),
+        ...about.technical.softwareDevelopmentSkills.map((skill: { title: string }) => skill.title),
+        ...about.technical.industrialChemistrySkills.map((skill: { title: string }) => skill.title),
+        ...about.technical.generalSkills.map((skill: { title: string }) => skill.title),
+      ],
     },
   ];
   return (
@@ -96,7 +101,7 @@ export default function About() {
             </Flex>
             {person.languages.length > 0 && (
               <Flex wrap gap="8">
-                {person.languages.map((language, index) => (
+                {person.languages.map((language: string, index: number) => (
                   <Tag key={language} size="l">
                     {language}
                   </Tag>
@@ -151,7 +156,7 @@ export default function About() {
             {social.length > 0 && (
               <Flex className={styles.blockAlign} paddingTop="20" paddingBottom="8" gap="8" wrap horizontal="center" fitWidth data-border="rounded">
                 {social.map(
-                  (item) =>
+                  (item: { link: string; icon: string; name: string }) =>
                     item.link && (
                         <Button
                             key={item.name}
@@ -180,7 +185,7 @@ export default function About() {
                 {about.work.title}
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
-                {about.work.experiences.map((experience, index) => (
+                {about.work.experiences.map((experience: { company: string; role: string; timeframe: string; achievements: JSX.Element[]; images: { src: string; alt: string; width: number; height: number; }[] }, index: number) => (
                   <Column key={`${experience.company}-${experience.role}-${index}`} fillWidth>
                     <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
                       <Text id={experience.company} variant="heading-strong-l">
@@ -206,7 +211,7 @@ export default function About() {
                     </Column>
                     {experience.images.length > 0 && (
                       <Flex fillWidth paddingTop="m" paddingLeft="40" gap="12" wrap>
-                        {experience.images.map((image, index) => (
+                        {experience.images.map((image: { src: string; alt: string; width: number; height: number; }, index: number) => (
                           <Flex
                             key={index}
                             border="neutral-medium"
@@ -242,7 +247,7 @@ export default function About() {
                 {about.studies.title}
               </Heading>
               <Column fillWidth gap="l" marginBottom="40">
-                {about.studies.institutions.map((institution, index) => (
+                {about.studies.institutions.map((institution: { name: string; description: JSX.Element }, index: number) => (
                   <Column key={`${institution.name}-${index}`} fillWidth gap="4">
                     <Text id={institution.name} variant="heading-strong-l">
                       {institution.name}
@@ -267,16 +272,77 @@ export default function About() {
                 {about.technical.title}
               </Heading>
               <Column fillWidth gap="l">
-                {about.technical.skills.map((skill, index) => (
-                  <Column key={`${skill}-${index}`} fillWidth gap="4">
-                    <Text id={skill.title} variant="heading-strong-l">{skill.title}</Text>
-                    {skill.description && (
-                      <Text variant="body-default-m" onBackground="neutral-weak">
-                        {skill.description}
-                      </Text>
-                    )}
+                {about.technical.webMobileSkills.length > 0 && (
+                  <Column marginBottom="m">
+                    <Text variant="heading-strong-m" marginBottom="s">Web/Mobile Development</Text>
+                    <Column gap="4">
+                      {about.technical.webMobileSkills.map((skill: { title: string; description: JSX.Element }, index: number) => (
+                        <Column key={`${skill.title}-${index}`} fillWidth gap="4">
+                          <Text id={skill.title} variant="heading-strong-l">{skill.title}</Text>
+                          {skill.description && (
+                            <Text variant="body-default-m" onBackground="neutral-weak">
+                              {skill.description}
+                            </Text>
+                          )}
+                        </Column>
+                      ))}
+                    </Column>
                   </Column>
-                ))}
+                )}
+
+                {about.technical.softwareDevelopmentSkills.length > 0 && (
+                  <Column marginBottom="m">
+                    <Text variant="heading-strong-m" marginBottom="s">Software Development</Text>
+                    <Column gap="4">
+                      {about.technical.softwareDevelopmentSkills.map((skill: { title: string; description: JSX.Element }, index: number) => (
+                        <Column key={`${skill.title}-${index}`} fillWidth gap="4">
+                          <Text id={skill.title} variant="heading-strong-l">{skill.title}</Text>
+                          {skill.description && (
+                            <Text variant="body-default-m" onBackground="neutral-weak">
+                              {skill.description}
+                            </Text>
+                          )}
+                        </Column>
+                      ))}
+                    </Column>
+                  </Column>
+                )}
+
+                {about.technical.industrialChemistrySkills.length > 0 && (
+                  <Column marginBottom="m">
+                    <Text variant="heading-strong-m" marginBottom="s">Industrial Chemistry</Text>
+                    <Column gap="4">
+                      {about.technical.industrialChemistrySkills.map((skill: { title: string; description: JSX.Element }, index: number) => (
+                        <Column key={`${skill.title}-${index}`} fillWidth gap="4">
+                          <Text id={skill.title} variant="heading-strong-l">{skill.title}</Text>
+                          {skill.description && (
+                            <Text variant="body-default-m" onBackground="neutral-weak">
+                              {skill.description}
+                            </Text>
+                          )}
+                        </Column>
+                      ))}
+                    </Column>
+                  </Column>
+                )}
+
+                {about.technical.generalSkills.length > 0 && (
+                  <Column>
+                    <Text variant="heading-strong-m" marginBottom="s">General Skills</Text>
+                    <Column gap="4">
+                      {about.technical.generalSkills.map((skill: { title: string; description: JSX.Element }, index: number) => (
+                        <Column key={`${skill.title}-${index}`} fillWidth gap="4">
+                          <Text id={skill.title} variant="heading-strong-l">{skill.title}</Text>
+                          {skill.description && (
+                            <Text variant="body-default-m" onBackground="neutral-weak">
+                              {skill.description}
+                            </Text>
+                          )}
+                        </Column>
+                      ))}
+                    </Column>
+                  </Column>
+                )}
               </Column>
             </>
           )}
